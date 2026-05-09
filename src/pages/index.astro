@@ -1,11 +1,509 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+	<main class="site-shell">
+		<header class="topbar" aria-label="Primary navigation">
+			<a class="brand" href="#home" aria-label="HabibX Design home">
+				<span class="brand-mark">HX</span>
+				<span>HabibX Design</span>
+			</a>
+			<nav>
+				<a href="#work">Work</a>
+				<a href="#services">Services</a>
+				<a href="#contact">Contact</a>
+			</nav>
+		</header>
+
+		<section id="home" class="hero">
+			<div class="hero-copy">
+				<p class="eyebrow">Portfolio / Web Design / Frontend</p>
+				<h1>Clean websites for brands that want to look sharp online.</h1>
+				<p class="intro">
+					I design and build fast, modern portfolio and business websites with clear layouts,
+					strong visuals, and smooth user experiences.
+				</p>
+				<div class="actions">
+					<a class="button primary" href="#work">View Work</a>
+					<a class="button secondary" href="mailto:ecomwalahabib@gmail.com">Email Me</a>
+				</div>
+			</div>
+
+			<div class="hero-visual" aria-label="Portfolio preview">
+				<div class="browser-bar">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+				<div class="preview-grid">
+					<div class="preview-panel large">
+						<span>Brand Identity</span>
+						<strong>Landing Page</strong>
+					</div>
+					<div class="preview-panel accent">
+						<span>Speed</span>
+						<strong>98%</strong>
+					</div>
+					<div class="preview-panel">
+						<span>Responsive</span>
+						<strong>Mobile Ready</strong>
+					</div>
+					<div class="preview-panel dark">
+						<span>Contact</span>
+						<strong>Lead Focused</strong>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="services" class="section">
+			<div class="section-heading">
+				<p class="eyebrow">Services</p>
+				<h2>What I can build</h2>
+			</div>
+			<div class="service-grid">
+				<article>
+					<h3>Portfolio Websites</h3>
+					<p>Personal sites that present your skills, projects, and contact details clearly.</p>
+				</article>
+				<article>
+					<h3>Business Landing Pages</h3>
+					<p>Focused pages for services, products, and offers with clean call-to-action sections.</p>
+				</article>
+				<article>
+					<h3>Frontend Development</h3>
+					<p>Responsive pages using HTML, CSS, JavaScript, Astro, and modern design patterns.</p>
+				</article>
+			</div>
+		</section>
+
+		<section id="work" class="section work-section">
+			<div class="section-heading">
+				<p class="eyebrow">Selected Work</p>
+				<h2>Project examples</h2>
+			</div>
+			<div class="work-grid">
+				<article class="project">
+					<div class="project-media blue"></div>
+					<div class="project-body">
+						<p>Portfolio Design</p>
+						<h3>Creative personal website</h3>
+					</div>
+				</article>
+				<article class="project">
+					<div class="project-media green"></div>
+					<div class="project-body">
+						<p>Business Website</p>
+						<h3>Service landing page</h3>
+					</div>
+				</article>
+				<article class="project">
+					<div class="project-media coral"></div>
+					<div class="project-body">
+						<p>Frontend Build</p>
+						<h3>Responsive product page</h3>
+					</div>
+				</article>
+			</div>
+		</section>
+
+		<section class="about">
+			<div>
+				<p class="eyebrow">About</p>
+				<h2>Hi, I am Habib.</h2>
+			</div>
+			<p>
+				I am building my web design and frontend development portfolio. This site is my home
+				base for projects, experiments, and client-ready website work.
+			</p>
+		</section>
+
+		<section id="contact" class="contact">
+			<div>
+				<p class="eyebrow">Contact</p>
+				<h2>Have a website idea?</h2>
+				<p>Send me a message and I will get back to you.</p>
+			</div>
+			<a class="button primary" href="mailto:ecomwalahabib@gmail.com">ecomwalahabib@gmail.com</a>
+		</section>
+	</main>
 </Layout>
+
+<style>
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	.site-shell {
+		width: min(1120px, calc(100% - 40px));
+		margin: 0 auto;
+		padding: 24px 0 56px;
+	}
+
+	.topbar {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 24px;
+		padding: 14px 0;
+	}
+
+	.brand,
+	nav,
+	.actions {
+		display: flex;
+		align-items: center;
+	}
+
+	.brand {
+		gap: 10px;
+		font-weight: 800;
+	}
+
+	.brand-mark {
+		display: grid;
+		width: 38px;
+		height: 38px;
+		place-items: center;
+		border-radius: 8px;
+		background: #111827;
+		color: #ffffff;
+		font-size: 14px;
+	}
+
+	nav {
+		gap: 20px;
+		color: #57534e;
+		font-size: 15px;
+	}
+
+	nav a:hover {
+		color: #111827;
+	}
+
+	.hero {
+		display: grid;
+		grid-template-columns: minmax(0, 1.05fr) minmax(340px, 0.95fr);
+		align-items: center;
+		gap: 52px;
+		min-height: calc(100vh - 92px);
+		padding: 36px 0 72px;
+	}
+
+	.hero-copy {
+		max-width: 680px;
+	}
+
+	.eyebrow {
+		margin: 0 0 14px;
+		color: #0f766e;
+		font-size: 13px;
+		font-weight: 800;
+		letter-spacing: 0;
+		text-transform: uppercase;
+	}
+
+	h1,
+	h2,
+	h3,
+	p {
+		margin-top: 0;
+	}
+
+	h1 {
+		max-width: 720px;
+		margin-bottom: 22px;
+		font-size: clamp(46px, 7vw, 82px);
+		line-height: 0.98;
+		letter-spacing: 0;
+	}
+
+	h2 {
+		margin-bottom: 0;
+		font-size: clamp(30px, 4vw, 46px);
+		line-height: 1.05;
+		letter-spacing: 0;
+	}
+
+	h3 {
+		margin-bottom: 10px;
+		font-size: 21px;
+		letter-spacing: 0;
+	}
+
+	.intro,
+	.about > p,
+	.contact p,
+	.service-grid p {
+		color: #57534e;
+		font-size: 18px;
+		line-height: 1.7;
+	}
+
+	.intro {
+		max-width: 580px;
+		margin-bottom: 30px;
+	}
+
+	.actions {
+		flex-wrap: wrap;
+		gap: 12px;
+	}
+
+	.button {
+		display: inline-flex;
+		min-height: 46px;
+		align-items: center;
+		justify-content: center;
+		border-radius: 8px;
+		padding: 0 18px;
+		font-weight: 800;
+		transition:
+			transform 180ms ease,
+			box-shadow 180ms ease,
+			background 180ms ease;
+	}
+
+	.button:hover {
+		transform: translateY(-2px);
+	}
+
+	.primary {
+		background: #0f766e;
+		color: #ffffff;
+		box-shadow: 0 14px 34px rgba(15, 118, 110, 0.24);
+	}
+
+	.secondary {
+		border: 1px solid #d6d3d1;
+		background: #ffffff;
+		color: #171717;
+	}
+
+	.hero-visual {
+		overflow: hidden;
+		border: 1px solid #d8d3ca;
+		border-radius: 8px;
+		background: #fffdfa;
+		box-shadow: 0 28px 70px rgba(41, 37, 36, 0.16);
+	}
+
+	.browser-bar {
+		display: flex;
+		gap: 7px;
+		padding: 16px;
+		border-bottom: 1px solid #e7e5e4;
+		background: #ffffff;
+	}
+
+	.browser-bar span {
+		width: 10px;
+		height: 10px;
+		border-radius: 999px;
+		background: #d6d3d1;
+	}
+
+	.preview-grid {
+		display: grid;
+		grid-template-columns: 1.1fr 0.9fr;
+		gap: 14px;
+		padding: 18px;
+	}
+
+	.preview-panel {
+		min-height: 132px;
+		border-radius: 8px;
+		padding: 18px;
+		background:
+			linear-gradient(135deg, rgba(15, 118, 110, 0.12), transparent 55%),
+			#f5f5f4;
+		border: 1px solid #e7e5e4;
+	}
+
+	.preview-panel.large {
+		min-height: 278px;
+		grid-row: span 2;
+		background:
+			linear-gradient(140deg, rgba(14, 165, 233, 0.16), transparent 54%),
+			#f8fafc;
+	}
+
+	.preview-panel.accent {
+		background:
+			linear-gradient(135deg, rgba(245, 158, 11, 0.18), transparent 55%),
+			#fffbeb;
+	}
+
+	.preview-panel.dark {
+		background: #1c1917;
+		color: #ffffff;
+	}
+
+	.preview-panel span,
+	.project-body p {
+		display: block;
+		margin-bottom: 10px;
+		color: #78716c;
+		font-size: 13px;
+		font-weight: 800;
+		text-transform: uppercase;
+	}
+
+	.preview-panel.dark span {
+		color: #d6d3d1;
+	}
+
+	.preview-panel strong {
+		display: block;
+		max-width: 180px;
+		font-size: 26px;
+		line-height: 1.08;
+	}
+
+	.section {
+		padding: 82px 0;
+		border-top: 1px solid #e0ddd5;
+	}
+
+	.section-heading {
+		display: flex;
+		align-items: end;
+		justify-content: space-between;
+		gap: 24px;
+		margin-bottom: 28px;
+	}
+
+	.service-grid,
+	.work-grid {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 18px;
+	}
+
+	.service-grid article {
+		min-height: 220px;
+		padding: 26px;
+		border: 1px solid #dedbd3;
+		border-radius: 8px;
+		background: #ffffff;
+	}
+
+	.work-section {
+		padding-top: 72px;
+	}
+
+	.project {
+		overflow: hidden;
+		border: 1px solid #dedbd3;
+		border-radius: 8px;
+		background: #ffffff;
+	}
+
+	.project-media {
+		min-height: 220px;
+		background:
+			linear-gradient(135deg, rgba(255, 255, 255, 0.55), transparent 42%),
+			#2563eb;
+	}
+
+	.project-media.green {
+		background:
+			linear-gradient(135deg, rgba(255, 255, 255, 0.5), transparent 46%),
+			#16a34a;
+	}
+
+	.project-media.coral {
+		background:
+			linear-gradient(135deg, rgba(255, 255, 255, 0.48), transparent 46%),
+			#e11d48;
+	}
+
+	.project-body {
+		padding: 22px;
+	}
+
+	.project-body h3 {
+		margin-bottom: 0;
+	}
+
+	.about,
+	.contact {
+		display: grid;
+		grid-template-columns: 0.8fr 1.2fr;
+		gap: 36px;
+		align-items: start;
+		padding: 82px 0;
+		border-top: 1px solid #e0ddd5;
+	}
+
+	.contact {
+		align-items: center;
+		padding-bottom: 20px;
+	}
+
+	.contact .button {
+		justify-self: end;
+	}
+
+	@media (max-width: 820px) {
+		.site-shell {
+			width: min(100% - 28px, 680px);
+		}
+
+		.topbar,
+		.section-heading,
+		.about,
+		.contact {
+			align-items: start;
+			flex-direction: column;
+			grid-template-columns: 1fr;
+		}
+
+		.topbar {
+			gap: 16px;
+		}
+
+		nav {
+			width: 100%;
+			justify-content: space-between;
+			gap: 12px;
+		}
+
+		.hero {
+			grid-template-columns: 1fr;
+			min-height: auto;
+			padding: 52px 0 66px;
+		}
+
+		h1 {
+			font-size: clamp(42px, 12vw, 62px);
+		}
+
+		.hero-visual {
+			width: 100%;
+		}
+
+		.preview-grid,
+		.service-grid,
+		.work-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.preview-panel.large {
+			min-height: 210px;
+			grid-row: auto;
+		}
+
+		.service-grid article {
+			min-height: auto;
+		}
+
+		.contact .button {
+			justify-self: start;
+			width: 100%;
+			padding-inline: 12px;
+		}
+	}
+</style>
