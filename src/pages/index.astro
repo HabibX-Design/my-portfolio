@@ -185,20 +185,26 @@ import Layout from '../layouts/Layout.astro';
 
 	.topbar {
 		position: fixed;
-		top: 20px;
+		top: 22px;
 		left: 50%;
 		z-index: 10;
 		display: flex;
-		width: min(1120px, calc(100% - 32px));
+		width: min(1040px, calc(100% - 32px));
 		align-items: center;
 		justify-content: space-between;
-		gap: 20px;
+		gap: 18px;
 		transform: translateX(-50%);
-		border: 1px solid rgba(222, 184, 104, 0.2);
-		border-radius: 8px;
-		background: rgba(9, 9, 9, 0.78);
-		padding: 12px;
-		backdrop-filter: blur(18px);
+		border: 1px solid rgba(247, 241, 228, 0.16);
+		border-radius: 999px;
+		background:
+			linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04)),
+			rgba(9, 9, 9, 0.48);
+		box-shadow:
+			0 24px 80px rgba(0, 0, 0, 0.42),
+			inset 0 1px 0 rgba(255, 255, 255, 0.16);
+		padding: 8px 9px 8px 10px;
+		backdrop-filter: blur(22px) saturate(150%);
+		-webkit-backdrop-filter: blur(22px) saturate(150%);
 	}
 
 	.brand,
@@ -215,37 +221,62 @@ import Layout from '../layouts/Layout.astro';
 	}
 
 	.brand {
-		gap: 10px;
+		gap: 12px;
+		padding-right: 10px;
 		font-weight: 800;
+		letter-spacing: 0;
 	}
 
 	.brand-mark {
 		display: grid;
-		width: 38px;
-		height: 38px;
+		width: 40px;
+		height: 40px;
 		place-items: center;
-		border-radius: 8px;
-		background: #deb868;
-		color: #090909;
+		border: 1px solid rgba(222, 184, 104, 0.48);
+		border-radius: 999px;
+		background:
+			linear-gradient(135deg, rgba(222, 184, 104, 0.92), rgba(247, 241, 228, 0.58)),
+			#deb868;
+		color: #0a0a0a;
 		font-size: 12px;
 		font-weight: 900;
+		box-shadow: 0 0 30px rgba(222, 184, 104, 0.22);
 	}
 
 	nav {
-		gap: 6px;
+		gap: 4px;
+		border: 1px solid rgba(247, 241, 228, 0.08);
+		border-radius: 999px;
+		background: rgba(255, 255, 255, 0.05);
+		padding: 4px;
 	}
 
 	nav a {
-		border-radius: 8px;
-		padding: 10px 12px;
-		color: #bdb6aa;
+		border-radius: 999px;
+		padding: 10px 14px;
+		color: rgba(247, 241, 228, 0.74);
 		font-size: 14px;
-		font-weight: 700;
+		font-weight: 800;
+		transition:
+			background 180ms ease,
+			color 180ms ease,
+			box-shadow 180ms ease;
 	}
 
 	nav a:hover {
-		background: rgba(222, 184, 104, 0.12);
+		background: rgba(247, 241, 228, 0.1);
 		color: #f7f1e4;
+	}
+
+	nav a:last-child {
+		background: rgba(222, 184, 104, 0.95);
+		color: #090909;
+		box-shadow: 0 10px 28px rgba(222, 184, 104, 0.18);
+	}
+
+	nav a:last-child:hover {
+		background: #f1cd78;
+		color: #090909;
 	}
 
 	.hero,
@@ -714,13 +745,10 @@ import Layout from '../layouts/Layout.astro';
 
 	@media (max-width: 860px) {
 		.topbar {
-			position: sticky;
-			top: 0;
-			left: auto;
-			width: 100%;
-			transform: none;
-			border-inline: 0;
-			border-radius: 0;
+			top: 12px;
+			width: min(100% - 20px, 680px);
+			gap: 8px;
+			padding: 7px;
 		}
 
 		.brand span:last-child {
@@ -731,10 +759,12 @@ import Layout from '../layouts/Layout.astro';
 			width: 100%;
 			justify-content: flex-end;
 			overflow-x: auto;
+			padding: 3px;
 		}
 
 		nav a {
-			padding-inline: 8px;
+			padding: 9px 10px;
+			font-size: 13px;
 		}
 
 		.hero,
