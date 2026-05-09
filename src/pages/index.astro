@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-	<main class="site-shell">
+	<main>
 		<header class="topbar" aria-label="Primary navigation">
 			<a class="brand" href="#home" aria-label="HabibX Design home">
 				<span class="brand-mark">HX</span>
@@ -18,114 +18,156 @@ import Layout from '../layouts/Layout.astro';
 
 		<section id="home" class="hero">
 			<div class="hero-copy">
-				<p class="eyebrow">Portfolio / Web Design / Frontend</p>
-				<h1>Clean websites for brands that want to look sharp online.</h1>
+				<p class="eyebrow">Independent web designer and frontend builder</p>
+				<h1>Digital pages with a little bite.</h1>
 				<p class="intro">
-					I design and build fast, modern portfolio and business websites with clear layouts,
-					strong visuals, and smooth user experiences.
+					I create sharp portfolio and business websites that feel confident, scroll smoothly,
+					and make your offer easy to understand.
 				</p>
 				<div class="actions">
-					<a class="button primary" href="#work">View Work</a>
-					<a class="button secondary" href="mailto:ecomwalahabib@gmail.com">Email Me</a>
+					<a class="button primary" href="#work">See the vibe</a>
+					<a class="button ghost" href="mailto:ecomwalahabib@gmail.com">Start a project</a>
 				</div>
 			</div>
 
-			<div class="hero-visual" aria-label="Portfolio preview">
-				<div class="browser-bar">
-					<span></span>
-					<span></span>
-					<span></span>
+			<div class="design-stage" aria-label="HabibX Design website preview">
+				<div class="stage-label">Live Website System</div>
+				<div class="poster poster-one">
+					<span>Portfolio</span>
+					<strong>01</strong>
 				</div>
-				<div class="preview-grid">
-					<div class="preview-panel large">
-						<span>Brand Identity</span>
-						<strong>Landing Page</strong>
+				<div class="poster poster-two">
+					<span>Landing</span>
+					<strong>02</strong>
+				</div>
+				<div class="mini-window">
+					<div class="window-top">
+						<span></span>
+						<span></span>
+						<span></span>
 					</div>
-					<div class="preview-panel accent">
-						<span>Speed</span>
-						<strong>98%</strong>
+					<div class="window-content">
+						<div class="line wide"></div>
+						<div class="line"></div>
+						<div class="tiles">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
 					</div>
-					<div class="preview-panel">
-						<span>Responsive</span>
-						<strong>Mobile Ready</strong>
-					</div>
-					<div class="preview-panel dark">
-						<span>Contact</span>
-						<strong>Lead Focused</strong>
-					</div>
+				</div>
+				<div class="score">
+					<span>Speed</span>
+					<strong>98</strong>
 				</div>
 			</div>
 		</section>
 
-		<section id="services" class="section">
-			<div class="section-heading">
-				<p class="eyebrow">Services</p>
-				<h2>What I can build</h2>
-			</div>
-			<div class="service-grid">
-				<article>
-					<h3>Portfolio Websites</h3>
-					<p>Personal sites that present your skills, projects, and contact details clearly.</p>
-				</article>
-				<article>
-					<h3>Business Landing Pages</h3>
-					<p>Focused pages for services, products, and offers with clean call-to-action sections.</p>
-				</article>
-				<article>
-					<h3>Frontend Development</h3>
-					<p>Responsive pages using HTML, CSS, JavaScript, Astro, and modern design patterns.</p>
-				</article>
-			</div>
-		</section>
+		<div class="ticker" aria-label="Skills">
+			<span>Astro</span>
+			<span>Responsive Design</span>
+			<span>Landing Pages</span>
+			<span>HTML</span>
+			<span>CSS</span>
+			<span>JavaScript</span>
+		</div>
 
 		<section id="work" class="section work-section">
-			<div class="section-heading">
-				<p class="eyebrow">Selected Work</p>
-				<h2>Project examples</h2>
+			<div class="section-kicker">Selected Work</div>
+			<div class="section-head">
+				<h2>Website concepts with personality.</h2>
+				<p>
+					These are sample directions for the type of websites I can build. Real client work
+					can replace these as your portfolio grows.
+				</p>
 			</div>
+
 			<div class="work-grid">
-				<article class="project">
-					<div class="project-media blue"></div>
+				<article class="project feature">
+					<div class="project-art art-one">
+						<div class="mock-nav"></div>
+						<div class="mock-title"></div>
+						<div class="mock-copy"></div>
+						<div class="mock-grid">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+					</div>
 					<div class="project-body">
-						<p>Portfolio Design</p>
-						<h3>Creative personal website</h3>
+						<p>Personal Brand</p>
+						<h3>Portfolio homepage for a creator</h3>
 					</div>
 				</article>
+
 				<article class="project">
-					<div class="project-media green"></div>
+					<div class="project-art art-two">
+						<div class="product-shape"></div>
+					</div>
 					<div class="project-body">
-						<p>Business Website</p>
-						<h3>Service landing page</h3>
+						<p>Ecommerce</p>
+						<h3>Launch page for a product</h3>
 					</div>
 				</article>
+
 				<article class="project">
-					<div class="project-media coral"></div>
-					<div class="project-body">
-						<p>Frontend Build</p>
-						<h3>Responsive product page</h3>
+					<div class="project-art art-three">
+						<div class="stack-card"></div>
+						<div class="stack-card"></div>
+						<div class="stack-card"></div>
 					</div>
+					<div class="project-body">
+						<p>Service Business</p>
+						<h3>Modern agency landing page</h3>
+					</div>
+				</article>
+			</div>
+		</section>
+
+		<section id="services" class="services">
+			<div>
+				<p class="eyebrow dark">What I do</p>
+				<h2>Design, build, publish, improve.</h2>
+			</div>
+			<div class="service-list">
+				<article>
+					<span>01</span>
+					<h3>Visual Direction</h3>
+					<p>Color, typography, spacing, and layout ideas that make the page feel intentional.</p>
+				</article>
+				<article>
+					<span>02</span>
+					<h3>Astro Builds</h3>
+					<p>Fast static websites that are simple to deploy on Netlify and easy to update.</p>
+				</article>
+				<article>
+					<span>03</span>
+					<h3>Responsive Polish</h3>
+					<p>Desktop and mobile screens checked so the page feels clean everywhere.</p>
 				</article>
 			</div>
 		</section>
 
 		<section class="about">
-			<div>
-				<p class="eyebrow">About</p>
-				<h2>Hi, I am Habib.</h2>
+			<div class="portrait" aria-hidden="true">
+				<span>HabibX</span>
 			</div>
-			<p>
-				I am building my web design and frontend development portfolio. This site is my home
-				base for projects, experiments, and client-ready website work.
-			</p>
+			<div class="about-copy">
+				<p class="eyebrow">About Habib</p>
+				<h2>I am building a design portfolio that looks alive, not generic.</h2>
+				<p>
+					This site is the starting point for my web design work. I am learning, improving, and
+					building a public portfolio that can grow into real client projects.
+				</p>
+			</div>
 		</section>
 
 		<section id="contact" class="contact">
-			<div>
-				<p class="eyebrow">Contact</p>
-				<h2>Have a website idea?</h2>
-				<p>Send me a message and I will get back to you.</p>
-			</div>
-			<a class="button primary" href="mailto:ecomwalahabib@gmail.com">ecomwalahabib@gmail.com</a>
+			<p class="eyebrow dark">Contact</p>
+			<h2>Need a page that does not look like everyone else's?</h2>
+			<a class="button primary inverted" href="mailto:ecomwalahabib@gmail.com">
+				ecomwalahabib@gmail.com
+			</a>
 		</section>
 	</main>
 </Layout>
@@ -136,73 +178,97 @@ import Layout from '../layouts/Layout.astro';
 		text-decoration: none;
 	}
 
-	.site-shell {
-		width: min(1120px, calc(100% - 40px));
-		margin: 0 auto;
-		padding: 24px 0 56px;
+	main {
+		overflow: hidden;
+		background: #fbfbf8;
+		color: #111111;
 	}
 
 	.topbar {
+		position: fixed;
+		top: 18px;
+		left: 50%;
+		z-index: 20;
 		display: flex;
+		width: min(1120px, calc(100% - 32px));
 		align-items: center;
 		justify-content: space-between;
-		gap: 24px;
-		padding: 14px 0;
+		gap: 18px;
+		transform: translateX(-50%);
+		border: 1px solid rgba(255, 255, 255, 0.18);
+		border-radius: 8px;
+		background: rgba(17, 17, 17, 0.82);
+		padding: 10px 12px;
+		color: #ffffff;
+		backdrop-filter: blur(16px);
 	}
 
 	.brand,
 	nav,
-	.actions {
+	.actions,
+	.ticker,
+	.project-body,
+	.window-top,
+	.tiles {
 		display: flex;
 		align-items: center;
 	}
 
 	.brand {
 		gap: 10px;
-		font-weight: 800;
+		font-size: 14px;
+		font-weight: 900;
 	}
 
 	.brand-mark {
 		display: grid;
-		width: 38px;
-		height: 38px;
+		width: 34px;
+		height: 34px;
 		place-items: center;
-		border-radius: 8px;
-		background: #111827;
-		color: #ffffff;
-		font-size: 14px;
+		border-radius: 7px;
+		background: #c7ff45;
+		color: #111111;
 	}
 
 	nav {
-		gap: 20px;
-		color: #57534e;
-		font-size: 15px;
+		gap: 8px;
+	}
+
+	nav a {
+		border-radius: 7px;
+		padding: 9px 12px;
+		color: #d8d8d2;
+		font-size: 14px;
+		font-weight: 800;
 	}
 
 	nav a:hover {
-		color: #111827;
+		background: #ffffff;
+		color: #111111;
 	}
 
 	.hero {
 		display: grid;
-		grid-template-columns: minmax(0, 1.05fr) minmax(340px, 0.95fr);
+		min-height: 100vh;
+		grid-template-columns: minmax(0, 1.03fr) minmax(360px, 0.97fr);
 		align-items: center;
 		gap: 52px;
-		min-height: calc(100vh - 92px);
-		padding: 36px 0 72px;
-	}
-
-	.hero-copy {
-		max-width: 680px;
+		width: min(1120px, calc(100% - 40px));
+		margin: 0 auto;
+		padding: 132px 0 72px;
 	}
 
 	.eyebrow {
-		margin: 0 0 14px;
-		color: #0f766e;
+		margin: 0 0 16px;
+		color: #d9471f;
 		font-size: 13px;
-		font-weight: 800;
+		font-weight: 900;
 		letter-spacing: 0;
 		text-transform: uppercase;
+	}
+
+	.eyebrow.dark {
+		color: #c7ff45;
 	}
 
 	h1,
@@ -215,36 +281,32 @@ import Layout from '../layouts/Layout.astro';
 	h1 {
 		max-width: 720px;
 		margin-bottom: 22px;
-		font-size: clamp(46px, 7vw, 82px);
-		line-height: 0.98;
+		font-size: clamp(52px, 9vw, 118px);
+		line-height: 0.86;
 		letter-spacing: 0;
+		text-transform: uppercase;
 	}
 
 	h2 {
 		margin-bottom: 0;
-		font-size: clamp(30px, 4vw, 46px);
-		line-height: 1.05;
+		font-size: clamp(34px, 5.6vw, 72px);
+		line-height: 0.94;
 		letter-spacing: 0;
 	}
 
 	h3 {
 		margin-bottom: 10px;
-		font-size: 21px;
+		font-size: 22px;
+		line-height: 1.08;
 		letter-spacing: 0;
 	}
 
-	.intro,
-	.about > p,
-	.contact p,
-	.service-grid p {
-		color: #57534e;
-		font-size: 18px;
-		line-height: 1.7;
-	}
-
 	.intro {
-		max-width: 580px;
+		max-width: 590px;
 		margin-bottom: 30px;
+		color: #494844;
+		font-size: 20px;
+		line-height: 1.6;
 	}
 
 	.actions {
@@ -254,16 +316,15 @@ import Layout from '../layouts/Layout.astro';
 
 	.button {
 		display: inline-flex;
-		min-height: 46px;
+		min-height: 50px;
 		align-items: center;
 		justify-content: center;
 		border-radius: 8px;
-		padding: 0 18px;
-		font-weight: 800;
+		padding: 0 20px;
+		font-weight: 900;
 		transition:
 			transform 180ms ease,
-			box-shadow 180ms ease,
-			background 180ms ease;
+			box-shadow 180ms ease;
 	}
 
 	.button:hover {
@@ -271,239 +332,553 @@ import Layout from '../layouts/Layout.astro';
 	}
 
 	.primary {
-		background: #0f766e;
+		background: #111111;
 		color: #ffffff;
-		box-shadow: 0 14px 34px rgba(15, 118, 110, 0.24);
+		box-shadow: 8px 8px 0 #c7ff45;
 	}
 
-	.secondary {
-		border: 1px solid #d6d3d1;
+	.ghost {
+		border: 2px solid #111111;
+		background: transparent;
+		color: #111111;
+	}
+
+	.inverted {
 		background: #ffffff;
-		color: #171717;
+		color: #111111;
+		box-shadow: 8px 8px 0 #d9471f;
 	}
 
-	.hero-visual {
-		overflow: hidden;
-		border: 1px solid #d8d3ca;
+	.design-stage {
+		position: relative;
+		min-height: 600px;
+		border: 2px solid #111111;
 		border-radius: 8px;
-		background: #fffdfa;
-		box-shadow: 0 28px 70px rgba(41, 37, 36, 0.16);
+		background:
+			linear-gradient(#202020 1px, transparent 1px),
+			linear-gradient(90deg, #202020 1px, transparent 1px),
+			#111111;
+		background-size: 34px 34px;
+		box-shadow: 18px 18px 0 #d9471f;
 	}
 
-	.browser-bar {
-		display: flex;
-		gap: 7px;
-		padding: 16px;
-		border-bottom: 1px solid #e7e5e4;
-		background: #ffffff;
-	}
-
-	.browser-bar span {
-		width: 10px;
-		height: 10px;
+	.stage-label {
+		position: absolute;
+		top: 18px;
+		left: 18px;
 		border-radius: 999px;
-		background: #d6d3d1;
-	}
-
-	.preview-grid {
-		display: grid;
-		grid-template-columns: 1.1fr 0.9fr;
-		gap: 14px;
-		padding: 18px;
-	}
-
-	.preview-panel {
-		min-height: 132px;
-		border-radius: 8px;
-		padding: 18px;
-		background:
-			linear-gradient(135deg, rgba(15, 118, 110, 0.12), transparent 55%),
-			#f5f5f4;
-		border: 1px solid #e7e5e4;
-	}
-
-	.preview-panel.large {
-		min-height: 278px;
-		grid-row: span 2;
-		background:
-			linear-gradient(140deg, rgba(14, 165, 233, 0.16), transparent 54%),
-			#f8fafc;
-	}
-
-	.preview-panel.accent {
-		background:
-			linear-gradient(135deg, rgba(245, 158, 11, 0.18), transparent 55%),
-			#fffbeb;
-	}
-
-	.preview-panel.dark {
-		background: #1c1917;
-		color: #ffffff;
-	}
-
-	.preview-panel span,
-	.project-body p {
-		display: block;
-		margin-bottom: 10px;
-		color: #78716c;
-		font-size: 13px;
-		font-weight: 800;
+		background: #c7ff45;
+		padding: 9px 13px;
+		font-size: 12px;
+		font-weight: 900;
 		text-transform: uppercase;
 	}
 
-	.preview-panel.dark span {
-		color: #d6d3d1;
+	.poster,
+	.score,
+	.mini-window {
+		position: absolute;
+		border: 2px solid #111111;
+		border-radius: 8px;
 	}
 
-	.preview-panel strong {
+	.poster {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 18px;
+	}
+
+	.poster span,
+	.score span {
+		font-size: 13px;
+		font-weight: 900;
+		text-transform: uppercase;
+	}
+
+	.poster strong {
+		font-size: 92px;
+		line-height: 0.8;
+	}
+
+	.poster-one {
+		top: 92px;
+		left: 36px;
+		width: 46%;
+		height: 300px;
+		background: #19a7ce;
+		transform: rotate(-5deg);
+	}
+
+	.poster-two {
+		right: 26px;
+		bottom: 70px;
+		width: 42%;
+		height: 270px;
+		background: #ffcd38;
+		transform: rotate(5deg);
+	}
+
+	.mini-window {
+		right: 42px;
+		top: 100px;
+		width: 280px;
+		overflow: hidden;
+		background: #ffffff;
+		box-shadow: -10px 10px 0 #111111;
+	}
+
+	.window-top {
+		gap: 7px;
+		border-bottom: 2px solid #111111;
+		padding: 11px;
+	}
+
+	.window-top span {
+		width: 10px;
+		height: 10px;
+		border-radius: 999px;
+		background: #d9471f;
+	}
+
+	.window-content {
+		padding: 16px;
+	}
+
+	.line {
+		width: 70%;
+		height: 14px;
+		margin-bottom: 10px;
+		border-radius: 999px;
+		background: #111111;
+	}
+
+	.line.wide {
+		width: 100%;
+		height: 34px;
+	}
+
+	.tiles {
+		gap: 8px;
+		margin-top: 20px;
+	}
+
+	.tiles span {
+		width: 33.33%;
+		height: 76px;
+		border-radius: 7px;
+		background: #c7ff45;
+	}
+
+	.score {
+		left: 42px;
+		bottom: 36px;
+		width: 152px;
+		background: #ffffff;
+		padding: 16px;
+		box-shadow: 8px 8px 0 #c7ff45;
+	}
+
+	.score strong {
 		display: block;
-		max-width: 180px;
-		font-size: 26px;
-		line-height: 1.08;
+		font-size: 72px;
+		line-height: 0.9;
+	}
+
+	.ticker {
+		justify-content: center;
+		gap: 12px;
+		min-height: 76px;
+		border-block: 2px solid #111111;
+		background: #c7ff45;
+		padding: 14px;
+		overflow-x: auto;
+	}
+
+	.ticker span {
+		white-space: nowrap;
+		border: 2px solid #111111;
+		border-radius: 999px;
+		background: #ffffff;
+		padding: 9px 14px;
+		font-weight: 900;
+	}
+
+	.section,
+	.services,
+	.about,
+	.contact {
+		width: min(1120px, calc(100% - 40px));
+		margin: 0 auto;
 	}
 
 	.section {
-		padding: 82px 0;
-		border-top: 1px solid #e0ddd5;
+		padding: 96px 0;
 	}
 
-	.section-heading {
-		display: flex;
+	.section-kicker {
+		display: inline-flex;
+		margin-bottom: 22px;
+		border: 2px solid #111111;
+		border-radius: 999px;
+		background: #ffcd38;
+		padding: 8px 12px;
+		font-size: 13px;
+		font-weight: 900;
+		text-transform: uppercase;
+	}
+
+	.section-head {
+		display: grid;
+		grid-template-columns: 1fr 0.75fr;
+		gap: 36px;
 		align-items: end;
-		justify-content: space-between;
-		gap: 24px;
-		margin-bottom: 28px;
+		margin-bottom: 34px;
 	}
 
-	.service-grid,
+	.section-head p,
+	.service-list p,
+	.about-copy p {
+		color: #494844;
+		font-size: 18px;
+		line-height: 1.65;
+	}
+
 	.work-grid {
 		display: grid;
-		grid-template-columns: repeat(3, minmax(0, 1fr));
+		grid-template-columns: 1.18fr 0.82fr;
 		gap: 18px;
-	}
-
-	.service-grid article {
-		min-height: 220px;
-		padding: 26px;
-		border: 1px solid #dedbd3;
-		border-radius: 8px;
-		background: #ffffff;
-	}
-
-	.work-section {
-		padding-top: 72px;
 	}
 
 	.project {
 		overflow: hidden;
-		border: 1px solid #dedbd3;
+		border: 2px solid #111111;
+		border-radius: 8px;
+		background: #ffffff;
+		box-shadow: 8px 8px 0 #111111;
+	}
+
+	.project.feature {
+		grid-row: span 2;
+	}
+
+	.project-art {
+		position: relative;
+		min-height: 260px;
+		border-bottom: 2px solid #111111;
+	}
+
+	.feature .project-art {
+		min-height: 500px;
+	}
+
+	.art-one {
+		background: #19a7ce;
+		padding: 26px;
+	}
+
+	.art-two {
+		display: grid;
+		place-items: center;
+		background: #ffcd38;
+	}
+
+	.art-three {
+		display: grid;
+		gap: 14px;
+		align-content: center;
+		background: #d9471f;
+		padding: 28px;
+	}
+
+	.mock-nav,
+	.mock-title,
+	.mock-copy,
+	.mock-grid span,
+	.product-shape,
+	.stack-card {
+		border: 2px solid #111111;
 		border-radius: 8px;
 		background: #ffffff;
 	}
 
-	.project-media {
-		min-height: 220px;
-		background:
-			linear-gradient(135deg, rgba(255, 255, 255, 0.55), transparent 42%),
-			#2563eb;
+	.mock-nav {
+		width: 100%;
+		height: 44px;
+		margin-bottom: 88px;
 	}
 
-	.project-media.green {
-		background:
-			linear-gradient(135deg, rgba(255, 255, 255, 0.5), transparent 46%),
-			#16a34a;
+	.mock-title {
+		width: 82%;
+		height: 92px;
+		margin-bottom: 18px;
+		background: #111111;
 	}
 
-	.project-media.coral {
-		background:
-			linear-gradient(135deg, rgba(255, 255, 255, 0.48), transparent 46%),
-			#e11d48;
+	.mock-copy {
+		width: 54%;
+		height: 20px;
+		margin-bottom: 34px;
+	}
+
+	.mock-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 14px;
+	}
+
+	.mock-grid span {
+		height: 120px;
+		background: #c7ff45;
+	}
+
+	.product-shape {
+		width: 150px;
+		height: 150px;
+		border-radius: 999px;
+		background: #111111;
+		box-shadow:
+			54px 26px 0 #ffffff,
+			-34px 42px 0 #c7ff45;
+	}
+
+	.stack-card {
+		height: 64px;
+		box-shadow: 6px 6px 0 #111111;
 	}
 
 	.project-body {
+		justify-content: space-between;
+		gap: 16px;
 		padding: 22px;
 	}
 
-	.project-body h3 {
+	.project-body p {
 		margin-bottom: 0;
+		color: #d9471f;
+		font-size: 13px;
+		font-weight: 900;
+		text-transform: uppercase;
 	}
 
-	.about,
+	.project-body h3 {
+		max-width: 360px;
+		margin-bottom: 0;
+		text-align: right;
+	}
+
+	.services {
+		display: grid;
+		grid-template-columns: 0.95fr 1.05fr;
+		gap: 44px;
+		border-radius: 8px;
+		background: #111111;
+		padding: 58px;
+		color: #ffffff;
+	}
+
+	.services h2 {
+		max-width: 440px;
+	}
+
+	.service-list {
+		display: grid;
+		gap: 12px;
+	}
+
+	.service-list article {
+		display: grid;
+		grid-template-columns: 48px 0.6fr 1fr;
+		gap: 18px;
+		align-items: start;
+		border-top: 1px solid #363636;
+		padding-top: 18px;
+	}
+
+	.service-list span {
+		color: #c7ff45;
+		font-weight: 900;
+	}
+
+	.service-list p {
+		margin-bottom: 0;
+		color: #d8d8d2;
+	}
+
+	.about {
+		display: grid;
+		grid-template-columns: 0.7fr 1.3fr;
+		gap: 42px;
+		align-items: center;
+		padding: 110px 0;
+	}
+
+	.portrait {
+		display: grid;
+		min-height: 360px;
+		place-items: end start;
+		border: 2px solid #111111;
+		border-radius: 8px;
+		background:
+			linear-gradient(135deg, transparent 0 42%, #111111 42% 44%, transparent 44%),
+			#c7ff45;
+		padding: 24px;
+		box-shadow: 10px 10px 0 #19a7ce;
+	}
+
+	.portrait span {
+		font-size: clamp(44px, 7vw, 72px);
+		font-weight: 900;
+		line-height: 0.9;
+		text-transform: uppercase;
+	}
+
+	.about-copy h2 {
+		margin-bottom: 22px;
+	}
+
 	.contact {
 		display: grid;
-		grid-template-columns: 0.8fr 1.2fr;
-		gap: 36px;
-		align-items: start;
-		padding: 82px 0;
-		border-top: 1px solid #e0ddd5;
+		place-items: center;
+		min-height: 520px;
+		margin-bottom: 40px;
+		border: 2px solid #111111;
+		border-radius: 8px;
+		background: #111111;
+		padding: 58px;
+		color: #ffffff;
+		text-align: center;
 	}
 
-	.contact {
-		align-items: center;
-		padding-bottom: 20px;
+	.contact h2 {
+		max-width: 780px;
+		margin-bottom: 28px;
 	}
 
-	.contact .button {
-		justify-self: end;
-	}
-
-	@media (max-width: 820px) {
-		.site-shell {
-			width: min(100% - 28px, 680px);
-		}
-
-		.topbar,
-		.section-heading,
-		.about,
-		.contact {
-			align-items: start;
-			flex-direction: column;
-			grid-template-columns: 1fr;
-		}
-
+	@media (max-width: 860px) {
 		.topbar {
-			gap: 16px;
+			position: sticky;
+			top: 0;
+			left: auto;
+			width: 100%;
+			transform: none;
+			border-radius: 0;
+		}
+
+		.brand span:last-child {
+			display: none;
 		}
 
 		nav {
 			width: 100%;
-			justify-content: space-between;
-			gap: 12px;
+			justify-content: flex-end;
+		}
+
+		nav a {
+			padding-inline: 9px;
+		}
+
+		.hero,
+		.section,
+		.services,
+		.about,
+		.contact {
+			width: min(100% - 28px, 680px);
 		}
 
 		.hero {
 			grid-template-columns: 1fr;
 			min-height: auto;
-			padding: 52px 0 66px;
+			padding: 72px 0 56px;
 		}
 
 		h1 {
-			font-size: clamp(42px, 12vw, 62px);
+			font-size: clamp(50px, 17vw, 82px);
 		}
 
-		.hero-visual {
-			width: 100%;
+		.intro {
+			font-size: 18px;
 		}
 
-		.preview-grid,
-		.service-grid,
-		.work-grid {
+		.design-stage {
+			min-height: 510px;
+			box-shadow: 10px 10px 0 #d9471f;
+		}
+
+		.poster-one {
+			left: 18px;
+			width: 56%;
+			height: 250px;
+		}
+
+		.poster-two {
+			right: 18px;
+			width: 52%;
+			height: 220px;
+		}
+
+		.mini-window {
+			right: 18px;
+			width: 220px;
+		}
+
+		.poster strong {
+			font-size: 70px;
+		}
+
+		.ticker {
+			justify-content: start;
+		}
+
+		.section-head,
+		.work-grid,
+		.services,
+		.about {
 			grid-template-columns: 1fr;
 		}
 
-		.preview-panel.large {
-			min-height: 210px;
+		.project.feature {
 			grid-row: auto;
 		}
 
-		.service-grid article {
-			min-height: auto;
+		.feature .project-art,
+		.project-art {
+			min-height: 320px;
+		}
+
+		.mock-nav {
+			margin-bottom: 52px;
+		}
+
+		.project-body {
+			display: block;
+		}
+
+		.project-body p {
+			margin-bottom: 8px;
+		}
+
+		.project-body h3 {
+			text-align: left;
+		}
+
+		.services,
+		.contact {
+			padding: 34px 22px;
+		}
+
+		.service-list article {
+			grid-template-columns: 1fr;
+			gap: 6px;
+		}
+
+		.portrait {
+			min-height: 260px;
 		}
 
 		.contact .button {
-			justify-self: start;
 			width: 100%;
-			padding-inline: 12px;
+			padding-inline: 10px;
 		}
 	}
 </style>
