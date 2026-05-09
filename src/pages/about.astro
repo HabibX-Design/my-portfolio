@@ -1,0 +1,145 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import Icon from '@/components/ui/primitives/Icon/Icon.astro';
+import Badge from '@/components/ui/data-display/Badge/Badge.astro';
+import Card from '@/components/ui/data-display/Card/Card.astro';
+import Button from '@/components/ui/form/Button/Button.astro';
+import { Hero } from '@/components/hero';
+import TypingEffect from '@/components/ui/TypingEffect.astro';
+import LetterGlitchBand from '@/components/patterns/LetterGlitchBand.astro';
+import siteConfig from '@/config/site.config';
+
+const values = [
+  ['layout-dashboard', 'Clean UI systems', 'Pages are organized so visitors can scan, compare, trust, and take action quickly.'],
+  ['shopping-bag', 'Ecommerce thinking', 'Storefront design focuses on product clarity, trust signals, bundles, and mobile buying flow.'],
+  ['search-check', 'SEO-ready structure', 'Metadata, sitemap, RSS, schema, and fast static rendering are built into the foundation.'],
+];
+
+const workflow = [
+  ['Discover', 'Understand the offer, target customer, competitors, existing assets, and the business goal.'],
+  ['Design', 'Create premium sections with clear hierarchy, conversion copy, and polished visual direction.'],
+  ['Build', 'Implement a fast responsive site with Astro, Tailwind, theme support, and reusable content structure.'],
+  ['Launch', 'Prepare the project for Netlify and support final edits after feedback.'],
+];
+---
+
+<PageLayout
+  title="About HabibX Design | Web Designer & Ecommerce Specialist"
+  description="Meet HabibX Design, a web design portfolio focused on Shopify stores, landing pages, business websites, and Odoo / CRM setup pages."
+>
+  <Hero layout="centered" size="sm">
+    <Badge slot="badge" variant="brand" pill>
+      <Icon name="user" size="sm" />
+      About
+    </Badge>
+    <h1 slot="title">
+      <span class="text-foreground [-webkit-text-fill-color:currentColor]">HabibX Design is a</span><br />
+      <span class="text-brand-500 [-webkit-text-fill-color:var(--color-brand-500)]">
+        <TypingEffect words={["Shopify Designer", "Landing Page Designer", "Ecommerce Specialist", "CRM Setup Partner"]} />
+      </span>
+    </h1>
+
+    <p slot="description">
+      I help ecommerce brands and service businesses look credible online with premium design, clear structure, and launch-ready Astro implementation.
+    </p>
+  </Hero>
+
+  <section class="py-[var(--space-section-md)] bg-background-secondary border-t border-border">
+    <div class="mx-auto max-w-6xl px-6 grid gap-12 lg:grid-cols-2">
+      <div class="flex flex-col justify-center" data-reveal="right">
+        <Badge variant="brand" pill class="self-start mb-6">The focus</Badge>
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+          Premium freelance web design for clients who need confidence before launch.
+        </h2>
+        <p class="text-lg text-foreground-muted leading-relaxed mb-4">
+          I build for the situations where presentation matters: Fiverr buyers comparing sellers, recruiters reviewing quality, and business owners deciding if a website feels ready for real customers.
+        </p>
+        <p class="text-lg text-foreground-muted leading-relaxed">
+          Every section has a job: explain the offer, remove doubt, show proof, guide the next click, and keep the site fast on mobile.
+        </p>
+      </div>
+
+      <Card variant="elevated" padding="lg" class="h-full" data-reveal="left" data-reveal-delay="1">
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div class="rounded-xl border border-border bg-background-secondary p-5">
+            <Icon name="store" class="text-brand-500 mb-4" />
+            <p class="text-sm font-semibold text-foreground">Shopify stores</p>
+            <p class="text-sm text-foreground-muted mt-2">Product pages, homepages, trust blocks, bundles, and store polish.</p>
+          </div>
+          <div class="rounded-xl border border-border bg-background-secondary p-5">
+            <Icon name="mouse-pointer-click" class="text-brand-500 mb-4" />
+            <p class="text-sm font-semibold text-foreground">Landing pages</p>
+            <p class="text-sm text-foreground-muted mt-2">Offer pages designed for leads, booked calls, and campaign traffic.</p>
+          </div>
+          <div class="rounded-xl border border-border bg-background-secondary p-5">
+            <Icon name="building-2" class="text-brand-500 mb-4" />
+            <p class="text-sm font-semibold text-foreground">Business websites</p>
+            <p class="text-sm text-foreground-muted mt-2">Service pages, about sections, contact flows, and credibility signals.</p>
+          </div>
+          <div class="rounded-xl border border-border bg-background-secondary p-5">
+            <Icon name="workflow" class="text-brand-500 mb-4" />
+            <p class="text-sm font-semibold text-foreground">Odoo / CRM</p>
+            <p class="text-sm text-foreground-muted mt-2">Setup pages and process flows for sales, inventory, invoices, and teams.</p>
+          </div>
+        </div>
+      </Card>
+    </div>
+  </section>
+
+  <section class="py-[var(--space-section-md)] bg-background border-t border-border">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="mb-8 text-center flex flex-col items-center gap-4" data-reveal>
+        <Badge variant="brand" pill>Standards</Badge>
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-foreground">How I shape the work</h2>
+      </div>
+      <div class="grid gap-6 md:grid-cols-3">
+        {values.map(([icon, title, copy]) => (
+          <Card hover data-reveal>
+            <div class="flex items-start gap-4">
+              <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-brand-500/20 to-brand-500/5 flex items-center justify-center text-brand-500 shrink-0">
+                <Icon name={icon} size="md" />
+              </div>
+              <div>
+                <h3 class="text-base font-semibold text-foreground">{title}</h3>
+                <p class="text-sm text-foreground-muted leading-relaxed mt-1.5">{copy}</p>
+              </div>
+            </div>
+          </Card>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-[var(--space-section-md)] bg-background-secondary border-t border-border">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="mb-8 text-center flex flex-col items-center gap-4" data-reveal>
+        <Badge variant="brand" pill>Process</Badge>
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-foreground">From brief to launch</h2>
+      </div>
+      <div class="grid gap-6 md:grid-cols-4">
+        {workflow.map(([title, copy], index) => (
+          <Card variant="elevated" hover data-reveal data-reveal-delay={String(index)}>
+            <span class="text-brand-500 font-display text-xl font-bold">{String(index + 1).padStart(2, '0')}</span>
+            <h3 class="text-base font-semibold text-foreground mt-6">{title}</h3>
+            <p class="text-sm text-foreground-muted leading-relaxed mt-2">{copy}</p>
+          </Card>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="relative z-10 py-[var(--space-section-md)] bg-background border-t border-border">
+    <LetterGlitchBand>
+      <h2 class="font-display text-4xl font-bold text-foreground mb-4 text-balance">
+        Want to work with HabibX Design?
+      </h2>
+      <p class="text-lg text-foreground-muted mb-8 text-balance">
+        Email the brief, reference sites, platform, and timeline. I will reply with the cleanest next step.
+      </p>
+      <Button size="lg" href={`mailto:${siteConfig.email}`} class="hero-btn-brand">
+        Email HabibX Design
+        <Icon name="mail" size="sm" />
+      </Button>
+    </LetterGlitchBand>
+  </section>
+</PageLayout>

@@ -1,24 +1,221 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Hero from '../components/Hero.astro';
-import SkillsStrip from '../components/SkillsStrip.astro';
-import Work from '../components/Work.astro';
-import Services from '../components/Services.astro';
-import Process from '../components/Process.astro';
-import About from '../components/About.astro';
-import Contact from '../components/Contact.astro';
+import LandingLayout from '@/layouts/LandingLayout.astro';
+import { Hero } from '@/components/hero';
+import Button from '@/components/ui/form/Button/Button.astro';
+import Badge from '@/components/ui/data-display/Badge/Badge.astro';
+import Card from '@/components/ui/data-display/Card/Card.astro';
+import Icon from '@/components/ui/primitives/Icon/Icon.astro';
+import BlogCard from '@/components/blog/BlogCard.astro';
+import LetterGlitchBand from '@/components/patterns/LetterGlitchBand.astro';
+import { getCollection } from 'astro:content';
+import siteConfig from '@/config/site.config';
+
+const projectItems = await getCollection('projects', ({ data }) => !data.draft);
+const featuredProjects = projectItems.sort((a, b) => a.data.order - b.data.order).slice(0, 3);
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf())
+  .slice(0, 3);
+
+const services = [
+  {
+    icon: 'store',
+    title: 'Shopify Store Design',
+    copy: 'Premium storefronts, product pages, trust sections, bundles, and mobile-first buying paths for ecommerce brands.',
+  },
+  {
+    icon: 'mouse-pointer-click',
+    title: 'Landing Page Design',
+    copy: 'Focused offer pages for leads, sales, bookings, and Fiverr campaigns with clear messaging and strong CTAs.',
+  },
+  {
+    icon: 'building-2',
+    title: 'Business Website Design',
+    copy: 'Clean service websites that make a business look credible, established, and easy to contact.',
+  },
+  {
+    icon: 'workflow',
+    title: 'Odoo / CRM Setup',
+    copy: 'CRM and operations pages that help teams organize leads, sales, inventory, invoicing, and follow-ups.',
+  },
+];
+
+const proofPoints = [
+  ['01', 'Premium visual direction', 'Polished dark-mode interfaces with clear hierarchy and recruiter-ready presentation.'],
+  ['02', 'Conversion structure', 'Sections built around trust, offer clarity, proof, objections, and next-step actions.'],
+  ['03', 'Fast Astro foundation', 'Static-first pages with SEO, schema, sitemap, RSS, and Netlify deployment already wired.'],
+];
 ---
 
-<Layout>
-	<Header />
-	<main>
-		<Hero />
-		<SkillsStrip />
-		<Work />
-		<Services />
-		<Process />
-		<About />
-		<Contact />
-	</main>
-</Layout>
+<LandingLayout
+  title="HabibX Design | Web Designer & Ecommerce Specialist"
+  description={siteConfig.description}
+  image="/og-default.svg"
+  includePersonSchema={true}
+  includeProfessionalServiceSchema={true}
+>
+  <Hero layout="centered" size="xl" class="hero-dark-gradient" showScrollIndicator>
+    <Badge slot="badge" variant="brand" pill pulse class="dark:text-brand-200">
+      Available for Fiverr, ecommerce, and recruiter projects
+    </Badge>
+
+    <h1 slot="title">
+      <span class="text-brand-600 dark:text-foreground [-webkit-text-fill-color:currentColor]">HabibX Design</span><br />
+      <span class="text-brand-600 dark:text-foreground [-webkit-text-fill-color:currentColor]">Premium websites</span>
+      <span class="text-brand-600 dark:text-foreground [-webkit-text-fill-color:currentColor]"> that convert.</span>
+    </h1>
+
+    <p slot="description">
+      I design Shopify stores, landing pages, business websites, and Odoo / CRM setup pages for clients who need a sharp online presence and a clear path from visitor to inquiry.
+    </p>
+
+    <Fragment slot="actions">
+      <Button size="lg" href="/projects">
+        View portfolio
+        <Icon name="arrow-right" size="sm" />
+      </Button>
+      <Button size="lg" variant="outline" href={`mailto:${siteConfig.email}`}>
+        <Icon name="mail" size="sm" />
+        {siteConfig.email}
+      </Button>
+    </Fragment>
+  </Hero>
+
+  <section class="relative z-10 py-[var(--space-section-md)] bg-background-secondary border-t border-border">
+    <div class="mx-auto max-w-6xl px-6 flex flex-col gap-8">
+      <div class="flex flex-col items-center gap-4 text-center" data-reveal>
+        <Badge variant="brand" pill>Services</Badge>
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-foreground">Design services for serious online brands</h2>
+        <p class="text-lg text-foreground-muted max-w-2xl mx-auto text-balance">
+          Built for founders, agencies, Fiverr buyers, and hiring teams who need more than a nice-looking page.
+        </p>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        {services.map((service, index) => (
+          <Card hover data-reveal data-reveal-delay={String(index)}>
+            <div class="flex h-full flex-col gap-4">
+              <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-brand-500/20 to-brand-500/5 flex items-center justify-center text-brand-500">
+                <Icon name={service.icon} size="md" />
+              </div>
+              <div>
+                <h3 class="text-base font-semibold text-foreground">{service.title}</h3>
+                <p class="text-sm text-foreground-muted leading-relaxed mt-2">{service.copy}</p>
+              </div>
+            </div>
+          </Card>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="relative z-10 py-[var(--space-section-md)] bg-background border-t border-border">
+    <div class="mx-auto max-w-6xl px-6 flex flex-col gap-8">
+      <div class="flex flex-col items-center gap-4 text-center" data-reveal>
+        <Badge variant="brand" pill>Selected work</Badge>
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-foreground">Portfolio projects</h2>
+        <p class="text-lg text-foreground-muted max-w-2xl mx-auto text-balance">
+          Concept case studies that show the type of ecommerce, landing page, and CRM work HabibX Design can deliver.
+        </p>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-3">
+        {featuredProjects.map((project) => (
+          <Card variant="elevated" hover padding="lg" href={`/projects/${project.id.replace(/\.mdx?$/, '')}`} class="group flex flex-col" data-reveal>
+            <div class="mb-4 flex items-start justify-between gap-4">
+              <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-500/20 to-brand-500/5 flex items-center justify-center text-brand-500 shrink-0">
+                <Icon name="layers" size="sm" />
+              </div>
+              <Icon name="arrow-up-right" size="sm" class="text-foreground-muted group-hover:text-brand-500 transition-colors shrink-0" />
+            </div>
+            <h3 class="font-display text-lg font-bold text-foreground mb-2">{project.data.title}</h3>
+            <p class="text-sm text-foreground-muted leading-relaxed mb-4 flex-1">{project.data.description}</p>
+            <div class="flex flex-wrap gap-1.5">
+              {project.data.tags.map((tag) => <Badge variant="brand">{tag}</Badge>)}
+            </div>
+          </Card>
+        ))}
+      </div>
+
+      <div class="flex justify-center">
+        <Button variant="outline" href="/projects">
+          View all projects
+          <Icon name="arrow-right" size="sm" />
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <section class="relative z-10 py-[var(--space-section-md)] bg-background-secondary border-t border-border">
+    <div class="mx-auto max-w-6xl px-6 grid gap-8 lg:grid-cols-[0.9fr_1.1fr] items-center">
+      <div data-reveal="right">
+        <Badge variant="brand" pill class="mb-6">Why clients hire me</Badge>
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+          A portfolio built for trust, clarity, and action.
+        </h2>
+        <p class="text-lg text-foreground-muted leading-relaxed">
+          HabibX Design is for businesses that want their website to feel premium without becoming confusing. I focus on clean layouts, useful content blocks, mobile responsiveness, and practical launch details.
+        </p>
+      </div>
+
+      <div class="grid gap-4" data-reveal="left" data-reveal-delay="1">
+        {proofPoints.map(([number, title, copy]) => (
+          <Card variant="elevated" hover>
+            <div class="flex gap-4">
+              <span class="text-brand-500 font-display text-xl font-bold">{number}</span>
+              <div>
+                <h3 class="text-base font-semibold text-foreground">{title}</h3>
+                <p class="text-sm text-foreground-muted leading-relaxed mt-1.5">{copy}</p>
+              </div>
+            </div>
+          </Card>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="relative z-10 py-[var(--space-section-md)] bg-background border-t border-border">
+    <div class="mx-auto max-w-6xl px-6 flex flex-col gap-8">
+      <div class="flex flex-col items-center gap-4 text-center" data-reveal>
+        <Badge variant="brand" pill>From the blog</Badge>
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-foreground">Design notes for better projects</h2>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-3">
+        {posts.map((post) => (
+          <BlogCard
+            title={post.data.title}
+            description={post.data.description}
+            href={`/blog/${post.id.replace('en/', '')}`}
+            publishedAt={post.data.publishedAt}
+            tags={post.data.tags}
+            author={post.data.author}
+            image={post.data.image}
+            svgSlug={post.data.svgSlug}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="relative z-10 py-[var(--space-section-md)] bg-background-secondary border-t border-border">
+    <LetterGlitchBand>
+      <h2 class="font-display text-4xl font-bold text-foreground mb-4 text-balance">
+        Need a Shopify store, landing page, or business website?
+      </h2>
+      <p class="text-lg text-foreground-muted mb-8 text-balance">
+        Send the project brief and I will help shape it into a clean, conversion-focused web experience.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <Button size="lg" href="/contact" class="hero-btn-brand">
+          Start a project
+          <Icon name="arrow-right" size="sm" />
+        </Button>
+        <Button size="lg" variant="outline" href={`mailto:${siteConfig.email}`}>
+          Email directly
+          <Icon name="mail" size="sm" />
+        </Button>
+      </div>
+    </LetterGlitchBand>
+  </section>
+</LandingLayout>

@@ -1,0 +1,83 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import Icon from '@/components/ui/primitives/Icon/Icon.astro';
+import Badge from '@/components/ui/data-display/Badge/Badge.astro';
+import Card from '@/components/ui/data-display/Card/Card.astro';
+import Button from '@/components/ui/form/Button/Button.astro';
+import { Hero } from '@/components/hero';
+import siteConfig from '@/config/site.config';
+
+const briefItems = [
+  'Website type: Shopify, landing page, business website, or CRM setup',
+  'Business niche and target customer',
+  'Reference websites or brand examples',
+  'Timeline, budget range, and must-have sections',
+];
+---
+
+<PageLayout
+  title="Contact HabibX Design | Start a Project"
+  description="Contact HabibX Design for Shopify store design, landing pages, business websites, and Odoo / CRM setup projects."
+  eagerReveal
+>
+  <Hero layout="centered" size="sm">
+    <Badge slot="badge" variant="brand" pill>
+      <Icon name="mail" size="sm" />
+      Contact
+    </Badge>
+
+    <h1 slot="title">
+      Start a <span class="text-brand-500">project.</span>
+    </h1>
+
+    <p slot="description">
+      Send a short brief and I will help turn it into a premium, conversion-focused web experience.
+    </p>
+  </Hero>
+
+  <section class="py-[var(--space-section-md)] bg-background-secondary border-t border-border">
+    <div class="mx-auto max-w-5xl px-6 grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+      <Card variant="elevated" padding="lg" data-reveal="right">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-500/20 to-brand-500/5 flex items-center justify-center text-brand-500 shrink-0">
+            <Icon name="send" size="md" />
+          </div>
+          <div>
+            <h2 class="font-display text-2xl font-bold text-foreground">Email directly</h2>
+            <p class="text-foreground-muted mt-2">
+              Best for Fiverr clients, founders, agencies, and recruiters who want a quick portfolio review or project estimate.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-8 flex flex-col sm:flex-row gap-4">
+          <Button size="lg" href={`mailto:${siteConfig.email}?subject=Project inquiry for HabibX Design`}>
+            Email HabibX Design
+            <Icon name="arrow-right" size="sm" />
+          </Button>
+          <Button size="lg" variant="outline" href={siteConfig.url}>
+            Live website
+            <Icon name="external-link" size="sm" />
+          </Button>
+        </div>
+
+        <div class="mt-8 rounded-xl border border-border bg-background-secondary p-5">
+          <p class="text-sm font-semibold text-foreground">Email</p>
+          <a class="text-brand-500 font-semibold break-all" href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
+        </div>
+      </Card>
+
+      <Card padding="lg" data-reveal="left" data-reveal-delay="1">
+        <Badge variant="brand" pill class="mb-5">What to include</Badge>
+        <ul class="space-y-4">
+          {briefItems.map((item) => (
+            <li class="flex gap-3 text-sm text-foreground-muted">
+              <Icon name="check-circle-2" size="sm" class="text-brand-500 mt-0.5" />
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </Card>
+    </div>
+  </section>
+</PageLayout>

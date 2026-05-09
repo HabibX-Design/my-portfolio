@@ -1,46 +1,40 @@
-# Astro Starter Kit: Basics
+# HabibX Design Portfolio
 
-```sh
-npm create astro@latest -- --template basics
+Personal portfolio website for HabibX Design.
+
+## Brand
+
+- Brand: HabibX Design
+- Email: ecomwalahabib@gmail.com
+- Live URL: https://habibx-design.netlify.app
+
+## Stack
+
+- Astro 6
+- Tailwind CSS 4
+- MDX content collections
+- Theme selector and dark mode
+- SEO, sitemap, RSS, robots.txt, and JSON-LD schema
+- Netlify deployment
+
+## Commands
+
+```bash
+npm install
+npm run dev
+npm run build
+npm run preview
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Netlify
 
-## 🚀 Project Structure
+- Build command: `npm run build`
+- Publish directory: `dist`
 
-Inside of your Astro project, you'll see the following folders and files:
+The Netlify settings are also defined in `netlify.toml`.
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+## Content
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Portfolio projects live in `src/content/projects/`.
+Blog posts live in `src/content/blog/en/`.
+Site and navigation settings live in `src/config/`.
