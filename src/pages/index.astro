@@ -20,7 +20,7 @@ import Layout from '../layouts/Layout.astro';
 		<section id="home" class="hero">
 			<div class="hero-copy">
 				<p class="eyebrow">Portfolio website designer</p>
-				<h1>HabibX Design</h1>
+				<h1>I design premium websites with a dark modern feel.</h1>
 				<p class="intro">
 					Premium dark websites for personal brands, startups, and service businesses that
 					need a sharp online presence.
@@ -31,31 +31,20 @@ import Layout from '../layouts/Layout.astro';
 				</div>
 			</div>
 
-			<div class="hero-showcase" aria-label="Premium website preview">
-				<div class="showcase-top">
-					<span></span>
-					<span></span>
-					<span></span>
-				</div>
-				<div class="showcase-body">
-					<div class="showcase-copy">
-						<p>Brand System</p>
-						<strong>Dark premium web experience</strong>
-						<span></span>
-						<span class="short"></span>
-					</div>
-					<div class="showcase-panel">
-						<div class="metric">
-							<span>Launch</span>
-							<strong>2026</strong>
-						</div>
-						<div class="metric">
-							<span>Focus</span>
-							<strong>Design</strong>
-						</div>
+			<figure class="hero-media">
+				<div class="portrait-frame">
+					<img src="/hero-person.svg" alt="Premium portrait illustration for HabibX Design" />
+					<div class="portrait-badge">
+						<span>Available for</span>
+						<strong>Web design projects</strong>
 					</div>
 				</div>
-			</div>
+				<div class="portrait-stats" aria-label="Design highlights">
+					<span>Responsive</span>
+					<span>Fast</span>
+					<span>Premium UI</span>
+				</div>
+			</figure>
 		</section>
 
 		<section class="proof-strip" aria-label="Capabilities">
@@ -211,9 +200,6 @@ import Layout from '../layouts/Layout.astro';
 	nav,
 	.actions,
 	.proof-strip,
-	.showcase-top,
-	.showcase-body,
-	.showcase-panel,
 	.project-content,
 	.service-list article {
 		display: flex;
@@ -291,7 +277,7 @@ import Layout from '../layouts/Layout.astro';
 	.hero {
 		display: grid;
 		min-height: 100vh;
-		grid-template-columns: minmax(0, 1fr) minmax(360px, 0.82fr);
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 		align-items: center;
 		gap: 60px;
 		padding: 132px 0 86px;
@@ -390,46 +376,54 @@ import Layout from '../layouts/Layout.astro';
 		background: rgba(222, 184, 104, 0.08);
 	}
 
-	.hero-showcase {
+	.hero-media {
+		position: relative;
+		margin: 0;
+	}
+
+	.portrait-frame {
+		position: relative;
 		overflow: hidden;
+		min-height: 640px;
 		border: 1px solid rgba(222, 184, 104, 0.28);
 		border-radius: 8px;
 		background:
-			linear-gradient(145deg, rgba(222, 184, 104, 0.18), transparent 45%),
-			#121212;
-		box-shadow: 0 36px 110px rgba(0, 0, 0, 0.5);
+			radial-gradient(circle at 65% 20%, rgba(222, 184, 104, 0.18), transparent 34%),
+			#101010;
+		box-shadow: 0 36px 110px rgba(0, 0, 0, 0.52);
 	}
 
-	.showcase-top {
-		gap: 8px;
-		border-bottom: 1px solid rgba(222, 184, 104, 0.18);
-		padding: 16px;
-	}
-
-	.showcase-top span {
-		width: 10px;
-		height: 10px;
-		border-radius: 999px;
-		background: #deb868;
-		opacity: 0.75;
-	}
-
-	.showcase-body {
-		min-height: 470px;
-		flex-direction: column;
-		align-items: stretch;
-		justify-content: space-between;
-		padding: 26px;
-	}
-
-	.showcase-copy {
-		padding: 28px;
-		border: 1px solid rgba(247, 241, 228, 0.12);
+	.portrait-frame::before {
+		position: absolute;
+		inset: 18px;
+		border: 1px solid rgba(247, 241, 228, 0.1);
 		border-radius: 8px;
-		background: rgba(255, 255, 255, 0.035);
+		content: "";
+		pointer-events: none;
 	}
 
-	.showcase-copy p,
+	.portrait-frame img {
+		display: block;
+		width: 100%;
+		height: 640px;
+		object-fit: cover;
+		object-position: center;
+	}
+
+	.portrait-badge {
+		position: absolute;
+		right: 24px;
+		bottom: 24px;
+		width: min(270px, calc(100% - 48px));
+		border: 1px solid rgba(247, 241, 228, 0.18);
+		border-radius: 8px;
+		background: rgba(9, 9, 9, 0.72);
+		padding: 18px;
+		backdrop-filter: blur(18px);
+		-webkit-backdrop-filter: blur(18px);
+	}
+
+	.portrait-badge span,
 	.project-content p {
 		margin-bottom: 12px;
 		color: #deb868;
@@ -438,49 +432,31 @@ import Layout from '../layouts/Layout.astro';
 		text-transform: uppercase;
 	}
 
-	.showcase-copy strong {
+	.portrait-badge strong {
 		display: block;
-		max-width: 360px;
-		margin-bottom: 32px;
-		font-size: 42px;
+		font-size: 24px;
 		line-height: 1;
 	}
 
-	.showcase-copy > span {
-		display: block;
-		width: 100%;
-		height: 12px;
-		margin-bottom: 10px;
-		border-radius: 999px;
-		background: rgba(247, 241, 228, 0.15);
-	}
-
-	.showcase-copy > span.short {
-		width: 62%;
-	}
-
-	.showcase-panel {
+	.portrait-stats {
+		display: flex;
+		position: absolute;
+		left: 24px;
+		top: 24px;
+		flex-wrap: wrap;
 		gap: 14px;
 	}
 
-	.metric {
-		width: 50%;
+	.portrait-stats span {
 		border: 1px solid rgba(247, 241, 228, 0.12);
-		border-radius: 8px;
-		padding: 18px;
-		background: #0d0d0d;
-	}
-
-	.metric span {
-		display: block;
-		margin-bottom: 8px;
-		color: #8f877b;
+		border-radius: 999px;
+		background: rgba(9, 9, 9, 0.58);
+		padding: 10px 13px;
+		color: #f7f1e4;
 		font-size: 13px;
-		text-transform: uppercase;
-	}
-
-	.metric strong {
-		font-size: 28px;
+		font-weight: 800;
+		backdrop-filter: blur(14px);
+		-webkit-backdrop-filter: blur(14px);
 	}
 
 	.proof-strip {
@@ -786,13 +762,24 @@ import Layout from '../layouts/Layout.astro';
 			font-size: clamp(54px, 17vw, 88px);
 		}
 
-		.showcase-body {
-			min-height: 420px;
-			padding: 18px;
+		.portrait-frame {
+			min-height: 480px;
 		}
 
-		.showcase-copy strong {
-			font-size: 34px;
+		.portrait-frame img {
+			height: 480px;
+		}
+
+		.portrait-stats {
+			left: 18px;
+			top: 18px;
+			gap: 8px;
+		}
+
+		.portrait-badge {
+			right: 18px;
+			bottom: 18px;
+			width: calc(100% - 36px);
 		}
 
 		.proof-strip {
