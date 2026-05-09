@@ -35,7 +35,7 @@ const services = [
 		<div class="service-grid">
 			{services.map((service, index) => (
 				<article class="service-card glass-card">
-					<span>{String(index + 1).padStart(2, '0')}</span>
+					<span class="service-index">{String(index + 1).padStart(2, '0')}</span>
 					<h3>{service.title}</h3>
 					<p>{service.copy}</p>
 				</article>
@@ -58,13 +58,29 @@ const services = [
 	}
 
 	.service-card {
+		position: relative;
+		overflow: hidden;
 		min-height: 275px;
-		border-radius: var(--radius);
+		border-radius: 30px;
 		padding: 24px;
 		transition:
 			transform 220ms ease,
 			background 220ms ease,
 			border-color 220ms ease;
+	}
+
+	.service-card::before {
+		position: absolute;
+		top: -80px;
+		right: -80px;
+		width: 180px;
+		height: 180px;
+		border-radius: 50%;
+		background: var(--holo);
+		content: "";
+		filter: blur(40px);
+		opacity: 0.18;
+		transition: opacity 220ms ease;
 	}
 
 	.service-card:hover {
@@ -75,7 +91,12 @@ const services = [
 			rgba(255, 255, 255, 0.045);
 	}
 
-	.service-card span {
+	.service-card:hover::before {
+		opacity: 0.32;
+	}
+
+	.service-index {
+		position: relative;
 		display: inline-grid;
 		width: 42px;
 		height: 42px;
@@ -85,6 +106,11 @@ const services = [
 		border-radius: 999px;
 		color: var(--cyan);
 		font-weight: 900;
+	}
+
+	.service-card h3,
+	.service-card p {
+		position: relative;
 	}
 
 	.service-card p {
@@ -106,7 +132,7 @@ const services = [
 			min-height: auto;
 		}
 
-		.service-card span {
+		.service-index {
 			margin-bottom: 28px;
 		}
 	}

@@ -34,28 +34,45 @@ const steps = [
 
 <style>
 	.process-grid {
+		position: relative;
 		display: grid;
 		grid-template-columns: repeat(4, minmax(0, 1fr));
-		gap: 0;
-		overflow: hidden;
-		border: 1px solid var(--line);
-		border-radius: var(--radius);
-		background: rgba(255, 255, 255, 0.045);
+		gap: 16px;
+	}
+
+	.process-grid::before {
+		position: absolute;
+		top: 44px;
+		left: 9%;
+		right: 9%;
+		height: 1px;
+		background: linear-gradient(90deg, transparent, rgba(53, 226, 235, 0.44), rgba(236, 72, 153, 0.44), transparent);
+		content: "";
 	}
 
 	.process-step {
 		position: relative;
+		z-index: 1;
 		min-height: 260px;
+		border: 1px solid var(--line);
+		border-radius: 26px;
+		background:
+			linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.045)),
+			rgba(255, 255, 255, 0.04);
+		box-shadow: 0 24px 70px rgba(0, 0, 0, 0.26);
 		padding: 26px;
 	}
 
 	.process-step:not(:last-child) {
-		border-right: 1px solid var(--line);
 	}
 
 	.process-step span {
 		display: inline-flex;
 		margin-bottom: 72px;
+		border: 1px solid rgba(255, 255, 255, 0.16);
+		border-radius: 999px;
+		background: rgba(5, 5, 5, 0.62);
+		padding: 9px 11px;
 		color: var(--cyan);
 		font-size: 0.82rem;
 		font-weight: 900;
@@ -83,13 +100,8 @@ const steps = [
 			grid-template-columns: 1fr 1fr;
 		}
 
-		.process-step:nth-child(2) {
-			border-right: 0;
-		}
-
-		.process-step:nth-child(1),
-		.process-step:nth-child(2) {
-			border-bottom: 1px solid var(--line);
+		.process-grid::before {
+			display: none;
 		}
 	}
 
@@ -100,11 +112,6 @@ const steps = [
 
 		.process-step {
 			min-height: auto;
-		}
-
-		.process-step:not(:last-child) {
-			border-right: 0;
-			border-bottom: 1px solid var(--line);
 		}
 
 		.process-step span {

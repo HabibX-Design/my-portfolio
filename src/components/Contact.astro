@@ -35,9 +35,18 @@
 		content: "";
 	}
 
+	.contact-card::after {
+		position: absolute;
+		inset: 1px;
+		border-radius: inherit;
+		background: linear-gradient(135deg, rgba(53, 226, 235, 0.16), transparent 38%, rgba(236, 72, 153, 0.14));
+		content: "";
+		pointer-events: none;
+	}
+
 	.contact-card > * {
 		position: relative;
-		z-index: 1;
+		z-index: 2;
 	}
 
 	.contact-card h2 {
