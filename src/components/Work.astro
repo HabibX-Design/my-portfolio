@@ -26,7 +26,7 @@ const projects = [
 		<div class="section-heading">
 			<div>
 				<p class="kicker">Featured Work</p>
-				<h2>Visual case studies for stores, services, and systems.</h2>
+				<h2>Projects built with a polished starter-theme feel.</h2>
 			</div>
 			<p>
 				Each card uses a high-impact mockup preview so visitors understand the design quality
@@ -100,7 +100,7 @@ const projects = [
 
 	.work-card {
 		overflow: hidden;
-		border-radius: 30px;
+		border-radius: var(--radius);
 		transition:
 			transform 240ms ease,
 			border-color 240ms ease,
@@ -115,7 +115,7 @@ const projects = [
 
 	.case-preview {
 		position: relative;
-		min-height: 345px;
+		min-height: 320px;
 		overflow: hidden;
 		border-bottom: 1px solid var(--line);
 		background:
@@ -152,12 +152,12 @@ const projects = [
 		position: relative;
 		z-index: 1;
 		border: 1px solid rgba(255, 255, 255, 0.2);
-		border-radius: 22px;
+		border-radius: 18px;
 		background:
 			linear-gradient(180deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.055)),
 			rgba(5, 5, 5, 0.58);
 		box-shadow: 0 26px 70px rgba(0, 0, 0, 0.34);
-		transform: rotate(-1.5deg);
+		transform: rotate(-1deg);
 	}
 
 	.work-card:hover .case-window {
@@ -251,7 +251,7 @@ const projects = [
 	}
 
 	.work-content {
-		padding: 23px;
+		padding: 22px;
 	}
 
 	.tag-row {
