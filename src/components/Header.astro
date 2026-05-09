@@ -1,0 +1,144 @@
+<header class="site-header" aria-label="Primary navigation">
+	<a class="brand" href="#home" aria-label="HabibX Design home">
+		<span class="brand-mark">HX</span>
+		<span>HabibX Design</span>
+	</a>
+	<nav aria-label="Main menu">
+		<a href="#work">Work</a>
+		<a href="#services">Services</a>
+		<a href="#process">Process</a>
+		<a href="#about">About</a>
+		<a href="#contact">Contact</a>
+	</nav>
+	<a class="header-cta" href="mailto:ecomwalahabib@gmail.com">Start a Project</a>
+</header>
+
+<style>
+	.site-header {
+		position: fixed;
+		top: 18px;
+		left: 50%;
+		z-index: 20;
+		display: grid;
+		width: min(1160px, calc(100% - 32px));
+		grid-template-columns: auto 1fr auto;
+		align-items: center;
+		gap: 18px;
+		transform: translateX(-50%);
+		border: 1px solid rgba(255, 255, 255, 0.16);
+		border-radius: 999px;
+		background:
+			linear-gradient(135deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.04)),
+			rgba(3, 7, 18, 0.72);
+		box-shadow:
+			0 24px 80px rgba(0, 0, 0, 0.34),
+			inset 0 1px 0 rgba(255, 255, 255, 0.14);
+		padding: 8px;
+		backdrop-filter: blur(22px) saturate(150%);
+		-webkit-backdrop-filter: blur(22px) saturate(150%);
+	}
+
+	.brand,
+	nav,
+	.header-cta {
+		display: flex;
+		align-items: center;
+	}
+
+	.brand {
+		gap: 10px;
+		padding-left: 4px;
+		font-weight: 900;
+		white-space: nowrap;
+	}
+
+	.brand-mark {
+		display: grid;
+		width: 40px;
+		height: 40px;
+		place-items: center;
+		border-radius: 999px;
+		background: linear-gradient(135deg, var(--cyan), var(--blue) 58%, var(--violet));
+		color: white;
+		font-size: 0.8rem;
+		box-shadow: 0 12px 32px rgba(79, 140, 255, 0.32);
+	}
+
+	nav {
+		justify-content: center;
+		gap: 2px;
+	}
+
+	nav a,
+	.header-cta {
+		border-radius: 999px;
+		font-size: 0.9rem;
+		font-weight: 800;
+		transition:
+			background 180ms ease,
+			color 180ms ease,
+			transform 180ms ease,
+			box-shadow 180ms ease;
+	}
+
+	nav a {
+		padding: 11px 13px;
+		color: rgba(248, 250, 252, 0.7);
+	}
+
+	nav a:hover {
+		background: rgba(255, 255, 255, 0.08);
+		color: white;
+	}
+
+	.header-cta {
+		min-height: 42px;
+		justify-content: center;
+		background: white;
+		padding: 0 16px;
+		color: #07111f;
+		box-shadow: 0 14px 34px rgba(255, 255, 255, 0.14);
+		white-space: nowrap;
+	}
+
+	.header-cta:hover {
+		transform: translateY(-1px);
+		background: linear-gradient(135deg, var(--cyan), var(--blue));
+		color: white;
+		box-shadow: 0 16px 34px rgba(79, 140, 255, 0.26);
+	}
+
+	@media (max-width: 920px) {
+		.site-header {
+			position: sticky;
+			top: 0;
+			left: auto;
+			width: 100%;
+			grid-template-columns: auto 1fr;
+			transform: none;
+			border-inline: 0;
+			border-radius: 0;
+			padding: 10px 12px;
+		}
+
+		nav {
+			justify-content: flex-end;
+			overflow-x: auto;
+		}
+
+		.header-cta {
+			display: none;
+		}
+
+		.brand span:last-child {
+			display: none;
+		}
+	}
+
+	@media (max-width: 520px) {
+		nav a {
+			padding: 10px 9px;
+			font-size: 0.82rem;
+		}
+	}
+</style>

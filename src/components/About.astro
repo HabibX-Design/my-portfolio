@@ -1,0 +1,125 @@
+<section id="about" class="about section-pad">
+	<div class="section-shell about-grid">
+		<div class="about-visual glass-card" aria-hidden="true">
+			<div class="profile-orb">HX</div>
+			<div class="profile-card">
+				<span>HabibX Design</span>
+				<strong>Web Designer & Ecommerce Specialist</strong>
+			</div>
+		</div>
+		<div class="about-copy">
+			<p class="kicker">About</p>
+			<h2>I build clean, modern, and business-focused websites.</h2>
+			<p>
+				I’m Habib, a web designer focused on building clean, modern, and business-focused
+				websites. My goal is to help brands present themselves professionally and turn visitors
+				into customers.
+			</p>
+			<div class="stats-card glass-card">
+				<span>Responsive layouts</span>
+				<span>Fast-loading pages</span>
+				<span>Conversion-focused sections</span>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.about {
+		background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.025));
+	}
+
+	.about-grid {
+		display: grid;
+		grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1.2fr);
+		gap: 44px;
+		align-items: center;
+	}
+
+	.about-visual {
+		position: relative;
+		display: grid;
+		min-height: 430px;
+		place-items: center;
+		overflow: hidden;
+		border-radius: var(--radius);
+	}
+
+	.about-visual::before {
+		position: absolute;
+		inset: 14%;
+		border-radius: 50%;
+		background: radial-gradient(circle, rgba(56, 232, 255, 0.28), transparent 64%);
+		content: "";
+	}
+
+	.profile-orb {
+		position: relative;
+		display: grid;
+		width: 190px;
+		height: 190px;
+		place-items: center;
+		border: 1px solid rgba(255, 255, 255, 0.2);
+		border-radius: 50%;
+		background: linear-gradient(135deg, var(--blue), var(--violet));
+		font-size: 4.5rem;
+		font-weight: 900;
+		box-shadow: 0 28px 80px rgba(79, 140, 255, 0.24);
+	}
+
+	.profile-card {
+		position: absolute;
+		right: 22px;
+		bottom: 22px;
+		width: min(280px, calc(100% - 44px));
+		border: 1px solid var(--line);
+		border-radius: 18px;
+		background: rgba(3, 7, 18, 0.72);
+		padding: 18px;
+		backdrop-filter: blur(18px);
+	}
+
+	.profile-card span {
+		display: block;
+		margin-bottom: 8px;
+		color: var(--cyan);
+		font-size: 0.78rem;
+		font-weight: 900;
+		text-transform: uppercase;
+	}
+
+	.profile-card strong {
+		font-size: 1.2rem;
+		line-height: 1.18;
+	}
+
+	.about-copy p {
+		max-width: 720px;
+		font-size: 1.08rem;
+	}
+
+	.stats-card {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 12px;
+		margin-top: 28px;
+		border-radius: var(--radius);
+		padding: 14px;
+	}
+
+	.stats-card span {
+		border: 1px solid var(--line);
+		border-radius: 16px;
+		background: rgba(255, 255, 255, 0.055);
+		padding: 16px;
+		color: var(--text);
+		font-weight: 800;
+	}
+
+	@media (max-width: 900px) {
+		.about-grid,
+		.stats-card {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

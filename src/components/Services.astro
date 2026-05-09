@@ -1,0 +1,113 @@
+---
+const services = [
+	{
+		title: 'Shopify Store Design',
+		copy: 'Product pages, homepage sections, bundles, and trust signals that help shoppers buy with confidence.',
+	},
+	{
+		title: 'Landing Page Design',
+		copy: 'Focused pages with clear messaging, strong hierarchy, and call-to-action sections for leads or sales.',
+	},
+	{
+		title: 'Business Website Design',
+		copy: 'Professional websites that make your brand look established, credible, and easy to contact.',
+	},
+	{
+		title: 'Odoo / CRM Setup',
+		copy: 'Clean digital system pages and setup support for CRM, sales, inventory, invoicing, and workflows.',
+	},
+];
+---
+
+<section id="services" class="services section-pad">
+	<div class="section-shell">
+		<div class="section-heading">
+			<div>
+				<p class="kicker">Services</p>
+				<h2>Design help for websites that need to earn trust.</h2>
+			</div>
+			<p>
+				From first impression to final CTA, each service is structured around clarity,
+				professional presentation, and business outcomes.
+			</p>
+		</div>
+
+		<div class="service-grid">
+			{services.map((service, index) => (
+				<article class="service-card glass-card">
+					<span>{String(index + 1).padStart(2, '0')}</span>
+					<h3>{service.title}</h3>
+					<p>{service.copy}</p>
+				</article>
+			))}
+		</div>
+	</div>
+</section>
+
+<style>
+	.services {
+		background:
+			radial-gradient(circle at 20% 20%, rgba(52, 211, 153, 0.1), transparent 30rem),
+			rgba(255, 255, 255, 0.018);
+	}
+
+	.service-grid {
+		display: grid;
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+		gap: 16px;
+	}
+
+	.service-card {
+		min-height: 275px;
+		border-radius: var(--radius);
+		padding: 24px;
+		transition:
+			transform 220ms ease,
+			background 220ms ease,
+			border-color 220ms ease;
+	}
+
+	.service-card:hover {
+		transform: translateY(-5px);
+		border-color: rgba(56, 232, 255, 0.35);
+		background:
+			linear-gradient(145deg, rgba(56, 232, 255, 0.11), rgba(255, 255, 255, 0.045)),
+			rgba(255, 255, 255, 0.045);
+	}
+
+	.service-card span {
+		display: inline-grid;
+		width: 42px;
+		height: 42px;
+		margin-bottom: 60px;
+		place-items: center;
+		border: 1px solid var(--line);
+		border-radius: 999px;
+		color: var(--cyan);
+		font-weight: 900;
+	}
+
+	.service-card p {
+		margin-bottom: 0;
+	}
+
+	@media (max-width: 980px) {
+		.service-grid {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+	}
+
+	@media (max-width: 560px) {
+		.service-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.service-card {
+			min-height: auto;
+		}
+
+		.service-card span {
+			margin-bottom: 28px;
+		}
+	}
+</style>
